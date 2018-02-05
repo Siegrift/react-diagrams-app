@@ -1,0 +1,3 @@
+[submodule "react-diagrams"]
+	path = react-diagrams
+	url = https://github.com/Siegrift/react-diagrams.git
