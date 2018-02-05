@@ -3,7 +3,7 @@ import { Button } from 'reactstrap'
 import { connect } from 'react-redux'
 import { buttonTextSelector } from './state'
 import { toggleButtonText } from './actions'
-import DiagramEditor from '../../react-diagrams/src'
+import DiagramEditor from 'react-diagrams/src'
 
 const App = ({ buttonText, toggleButtonText }) => (
   <div>
