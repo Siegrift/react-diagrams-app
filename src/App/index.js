@@ -1,22 +1,11 @@
 import React from 'react'
-import { Button } from 'reactstrap'
-import { connect } from 'react-redux'
-import { buttonTextSelector } from './state'
-import { toggleButtonText } from './actions'
 import DiagramEditor from 'react-diagrams/src'
+import { schema } from './schema'
 
-const App = ({ buttonText, toggleButtonText }) => (
+const App = () => (
   <div>
-    <Button onClick={toggleButtonText}>{buttonText}</Button>
-    <DiagramEditor />
+    <DiagramEditor schema={schema} />
   </div>
 )
 
-export default connect(
-  (state) => ({
-    buttonText: buttonTextSelector(state),
-  }),
-  {
-    toggleButtonText,
-  },
-)(App)
+export default App
