@@ -1,8 +1,5 @@
-import {setInitialState as appInitialState} from './App/state.js'
-import {compose} from './utils/helpers'
+import { compose } from 'recompose'
 
 const state = {}
 
-export default () => compose(
-  appInitialState,
-)(state)
+export default () => compose()(state)

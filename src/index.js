@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 import { AppContainer } from 'react-hot-loader'
 import getConfiguredStore from './configureStore'
-import 'assets/scss/style.scss'
+import '../assets/scss/style.scss'
 // load bootstrap for reactstrap
 import 'bootstrap/dist/css/bootstrap.css'
 // extend bluebird promise in dev mode
@@ -14,7 +14,7 @@ Promise.config({
 })
 
 const store = getConfiguredStore()
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>

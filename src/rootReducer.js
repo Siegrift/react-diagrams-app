@@ -1,14 +1,12 @@
-import {forwardReducerTo} from './utils/helpers'
 import getInitialState from './initialState'
+import { setIn, getIn } from 'immutable'
 
 const rootReducer = (state = getInitialState(), action) => {
-  if (!action.reducer) return state // fallback for actions from different sources
-
-  if (!action.path) {
-    throw new Error('You forgot action.path in action ' + action.type)
-  }
-
-  return forwardReducerTo(action.reducer, action.path)(state, action.payload)
+  const { reducer, path, payload, type } = action
+  if (!reducer) return state // fallback for actions from different sources
+  if (!path) throw new Error(`You forgot to set path in action ${type}`)
+  const updatedState = reducer(getIn(state, path), payload)
+  return setIn(state, path, updatedState)
 }
 
 export default rootReducer

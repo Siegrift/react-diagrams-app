@@ -1,6 +1,6 @@
 const path = require('path')
 
-export const APP_TITLE = 'React diagrams app'
+export const APP_TITLE = 'React redux boilerplate'
 export const APP_DIR = path.join(__dirname, '..')
 export const SRC_DIR = path.join(APP_DIR, 'src')
 export const NODE_DIR = path.join(APP_DIR, 'node_modules')

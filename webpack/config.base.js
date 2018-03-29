@@ -1,7 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import {NODE_DIR, SRC_DIR, ASSETS_DIR, APP_DIR, APP_TITLE} from './constants.js'
+import { NODE_DIR, SRC_DIR, ASSETS_DIR, APP_DIR, APP_TITLE } from './constants.js'
 
 export default {
   entry: [
@@ -18,7 +18,6 @@ export default {
   },
   module: {
     rules: [
-      // BABEL
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -27,7 +26,6 @@ export default {
           compact: true,
         },
       },
-      // STYLES
       {
         test: /\.css$/,
         use: [
@@ -37,28 +35,22 @@ export default {
           },
         ],
       },
-
-      // CSS / SASS
       {
         test: /\.scss/,
         use: [{
-          loader: 'style-loader', // creates style nodes from JS strings
+          loader: 'style-loader',
         }, {
-          loader: 'css-loader', // translates CSS into CommonJS
+          loader: 'css-loader',
         }, {
-          loader: 'sass-loader', // compiles Sass to CSS
+          loader: 'sass-loader',
         }, {
           loader: 'import-glob-loader',
         }],
       },
-
-      // EJS
       {
         test: /\.ejs$/,
         loader: 'ejs-loader',
       },
-
-      // IMAGES
       {
         test: /\.(jpe*g|png|gif)$/,
         loader: 'file-loader',
@@ -69,14 +61,14 @@ export default {
     ],
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
     hot: true,
   },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: `'${process.env.NODE_ENV}'`,
-      },
+      'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
     }),
     new webpack.ProvidePlugin({
       lodash: 'lodash',
@@ -86,13 +78,11 @@ export default {
       template: path.join(__dirname, 'index.ejs'),
       title: APP_TITLE,
     }),
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     pathinfo: true,
     path: path.join(APP_DIR, 'build'),
     filename: '[name].js',
-    publicPath: '/',
   },
 }
