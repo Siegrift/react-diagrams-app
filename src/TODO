@@ -1,0 +1,12 @@
+- while dragging new link show point on mouse positition
+- side bar component
+- rewrite selectors
+- ESC = kill selection, current line
+- TOP PANEL undo redo
+- left button disable
+- remove path from actions
+- simplify main editor component
+- remove nodes
+- split actions
+- make components generic
+- synchronize css
