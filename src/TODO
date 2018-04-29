@@ -1,12 +1,11 @@
-- while dragging new link show point on mouse positition
-- side bar component
-- rewrite selectors
-- ESC = kill selection, current line
-- TOP PANEL undo redo
-- left button disable
-- remove path from actions
-- simplify main editor component
-- remove nodes
-- split actions
+HIGH PRIO:
+- autoprefix css
+
+GOOD TO HAVE
+
+LOW PRIO
+- default browser behaviour while dragging
 - make components generic
 - synchronize css
+- undo redo selection
+- css cursor

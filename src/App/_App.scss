@@ -10,3 +10,32 @@
     border: 1px solid grey;
     border-radius: 5px;
 }
+
+.Toolbar {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 90%;
+    bottom: 80px;
+}
+
+.Problems {
+    left: 0;
+    right: 0;
+    width: 95%;
+    position: absolute;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 750px;
+    > * {
+        padding: 5px;
+        border: 1px solid;
+        &:not(:last-child) {
+            border-bottom: none;    
+        }
+    }
+    width: 90%;
+}

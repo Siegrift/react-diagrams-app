@@ -12,7 +12,7 @@ export const schema = {
       desc: 'Zvysi hodnotu, a tuto hodnotu vrati na vstupe',
       inPorts: [{ key: 'in', name: 'Hodnota', type: Int }],
       outPorts: [{ key: 'out', name: 'Zvysena hodnota', type: Int }],
-      color: 'rgb(0,192,255)',
+      color: 'rgb(0,100,255)',
     },
     {
       name: 'Dekrement',
