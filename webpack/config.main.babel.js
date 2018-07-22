@@ -45,9 +45,6 @@ export default {
           {
             loader: 'sass-loader',
           },
-          {
-            loader: 'import-glob-loader',
-          },
         ],
       },
       {

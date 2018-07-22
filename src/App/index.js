@@ -1,6 +1,7 @@
 import DiagramEditor from 'react-diagrams'
 import React from 'react'
 import { schema } from './schema'
+import './App.scss'
 
 class App extends React.Component {
   static editorApi = undefined

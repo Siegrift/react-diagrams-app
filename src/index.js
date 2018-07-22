@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './App'
 import getConfiguredStore from './configureStore'
-import '../assets/style.scss'
 
 // extend bluebird promise in dev mode
 Promise.config({
