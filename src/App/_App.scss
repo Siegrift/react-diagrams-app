@@ -1,45 +1,45 @@
 .DiagramEditor {
-    left: 0;
-    right: 0;
-    width: 95%;
-    height: 650px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    border: 1px solid grey;
-    border-radius: 5px;
+  left: 0;
+  right: 0;
+  width: 95%;
+  height: 650px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .Toolbar {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 90%;
-    top: 720px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 90%;
+  top: 720px;
 }
 
 .Problems {
-    left: 0;
-    right: 0;
-    width: 95%;
-    position: absolute;
-    margin: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    top: 750px;
-    >* {
-        padding: 5px;
-        border: 1px solid;
-        &:not(:last-child) {
-            border-bottom: none;
-        }
+  left: 0;
+  right: 0;
+  width: 95%;
+  position: absolute;
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 750px;
+  > * {
+    padding: 5px;
+    border: 1px solid;
+    &:not(:last-child) {
+      border-bottom: none;
     }
-    width: 90%;
+  }
+  width: 90%;
 }
 
 .sameLine {
-    display: flex;
+  display: flex;
 }

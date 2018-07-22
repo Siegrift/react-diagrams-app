@@ -27,7 +27,10 @@ export const schema = {
       key: 'is_zero',
       desc: 'Skontroluje ci je hodnota rovna 0',
       inPorts: [{ key: 'in', name: 'Hodnota', type: Int }],
-      outPorts: [{ key: 'zero', name: 'Ano', type: Void }, { key: 'nonzero', name: 'Nie', type: Void }],
+      outPorts: [
+        { key: 'zero', name: 'Ano', type: Void },
+        { key: 'nonzero', name: 'Nie', type: Void },
+      ],
       color: 'rgb(192,255,0)',
     },
     {

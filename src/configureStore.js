@@ -1,6 +1,6 @@
 import thunk from 'redux-thunk'
-import {createStore, applyMiddleware} from 'redux'
-import {createLogger} from 'redux-logger'
+import { applyMiddleware, createStore } from 'redux'
+import { createLogger } from 'redux-logger'
 import rootReducer from './rootReducer'
 import getInitialState from './initialState'
 
@@ -13,26 +13,19 @@ export default () => {
     collapsed: true,
   })
 
-  const middlewares = [
-    thunk.withExtraArgument({logger}),
-  ]
+  const middlewares = [thunk.withExtraArgument({ logger })]
   if (process.env.NODE_ENV === 'development') {
-    middlewares.push(
-      loggerMiddleware,
-    )
+    middlewares.push(loggerMiddleware)
   }
 
-  const store = createStore(
-    rootReducer,
-    getInitialState(),
-    applyMiddleware(...middlewares)
-  )
+  const store = createStore(rootReducer, getInitialState(), applyMiddleware(...middlewares))
 
   if (process.env.NODE_ENV === 'development') {
-    logger.log = (message, payload) => store.dispatch({
-      type: message,
-      payload,
-    })
+    logger.log = (message, payload) =>
+      store.dispatch({
+        type: message,
+        payload,
+      })
   }
 
   return store

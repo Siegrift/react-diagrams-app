@@ -1,7 +1,6 @@
+import DiagramEditor from 'react-diagrams'
 import React from 'react'
-import DiagramEditor from 'react-diagrams/src'
 import { schema } from './schema'
-import { Button, Input } from 'reactstrap'
 
 class App extends React.Component {
   static editorApi = undefined
@@ -91,7 +90,7 @@ class App extends React.Component {
         <DiagramEditor schema={schema} ref={this.handleRef} />
         <div className="Toolbar">
           API:
-          <Button onClick={this.handleGrafExport}>Export graph</Button>
+          <button onClick={this.handleGrafExport}>Export graph</button>
         </div>
         <div className="Problems">
           <div>
@@ -99,13 +98,13 @@ class App extends React.Component {
               Na vstupe je kladne cislo x mensie ako 1000, vystup vasho programu ma byt cislo 0.
             </p>
             <div className="sameLine">
-              <Input
+              <input
                 type="number"
                 value={this.state.x}
                 onChange={this.setX}
                 placeholder="Zvolte x"
               />
-              <Button onClick={this.testZero}>Otestuj</Button>
+              <button onClick={this.testZero}>Otestuj</button>
             </div>
           </div>
         </div>
