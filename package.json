@@ -57,7 +57,8 @@
     "build": "rm -rf build && NODE_ENV=production webpack --config webpack/config.main.babel.js --progress",
     "eslint": "eslint src webpack react-diagrams *.js",
     "lint": "prettier-eslint --write \"src/**/*.{js,jsx,json,scss}\" \"webpack/**/*.{js,jsx,json,scss}\" \"react-diagrams/**/*.{js,jsx,json,scss}\"",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "flow": "python3 ./check_flow.py & flow & flow-coverage-report"
   },
   "flow-coverage-report": {
     "includeGlob": [
