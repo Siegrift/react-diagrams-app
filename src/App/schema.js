@@ -1,8 +1,20 @@
+import {
+  MdAddCircle,
+  MdRemoveCircleOutline,
+  MdExposureZero,
+  MdLens,
+  MdPlayCircleOutline,
+} from 'react-icons/md'
+
 const Int = 'Int'
 const Any = 'Any'
 const Void = 'Void'
 const types = [Int]
 
+/**
+ * Commands in schema have keys to know what type of command is being dragged.Ensure that these keys
+ * are unique for each command.TODO: why do ports have key?
+ */
 export const schema = {
   types,
   commands: [
@@ -13,6 +25,7 @@ export const schema = {
       inPorts: [{ key: 'in', name: 'Hodnota', type: Int }],
       outPorts: [{ key: 'out', name: 'Zvysena hodnota', type: Int }],
       color: 'rgb(0,100,255)',
+      Icon: MdAddCircle,
     },
     {
       name: 'Dekrement',
@@ -21,6 +34,7 @@ export const schema = {
       inPorts: [{ key: 'in', name: 'Hodnota', type: Int }],
       outPorts: [{ key: 'out', name: 'Znizena hodnota', type: Int }],
       color: 'rgb(110,50,180)',
+      Icon: MdRemoveCircleOutline,
     },
     {
       name: 'Je nula',
@@ -32,6 +46,7 @@ export const schema = {
         { key: 'nonzero', name: 'Nie', type: Void },
       ],
       color: 'rgb(192,255,0)',
+      Icon: MdExposureZero,
     },
     {
       name: 'Zaciatok',
@@ -40,6 +55,7 @@ export const schema = {
       inPorts: [],
       outPorts: [{ key: 'out', name: 'Zaciatok', type: Int }],
       color: 'rgb(100,20,0)',
+      Icon: MdPlayCircleOutline,
     },
     {
       name: 'Koniec',
@@ -48,6 +64,7 @@ export const schema = {
       inPorts: [{ key: 'in', name: 'Koniec', type: Any }],
       outPorts: [],
       color: 'rgb(200,150,150)',
+      Icon: MdLens,
     },
   ],
   maxSteps: 10000,

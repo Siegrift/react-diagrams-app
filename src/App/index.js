@@ -4,11 +4,11 @@ import { schema } from './schema'
 import './App.scss'
 
 class App extends React.Component {
-  static editorApi = undefined
   state = { x: '' }
+  diagramRef = React.createRef()
 
   handleGrafExport = (e) => {
-    console.log(this.editorApi.exportGraph())
+    console.log(this.diagramRef.current.exportGraph())
   }
 
   testZero = () => {
@@ -17,7 +17,7 @@ class App extends React.Component {
       alert('Neplatny vstup')
       return
     }
-    const graph = this.editorApi.exportGraph()
+    const graph = this.diagramRef.current.exportGraph()
     const begins = Object.keys(graph.widgets).filter((key) => graph.widgets[key].key === 'begin')
     let message = 'Zle! :('
     let state = { input: this.state.x }
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   executeCommand = (state) => {
     const { command, input } = state
-    const graph = this.editorApi.exportGraph()
+    const graph = this.diagramRef.current.exportGraph()
     const getNodeByPort = (portId) => {
       const id = Object.keys(graph.widgets).find((nodeId) => {
         return graph.widgets[nodeId].inPorts.find((port) => port.editorKey === portId)
@@ -81,14 +81,10 @@ class App extends React.Component {
 
   setX = (e) => this.setState({ x: parseInt(e.target.value, 10) })
 
-  handleRef = (ref) => {
-    this.editorApi = ref
-  }
-
   render() {
     return (
       <div>
-        <DiagramEditor schema={schema} ref={this.handleRef} />
+        <DiagramEditor schema={schema} ref={this.diagramRef} />
         <div className="Toolbar">
           API:
           <button onClick={this.handleGrafExport}>Export graph</button>
